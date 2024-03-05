@@ -1,0 +1,122 @@
+:root{
+    --color1: #4154af;
+    --color2: #20598d;
+    --color3: #b8b0c3;
+    --color4: #f7dca7;
+    --color5: #30302f;
+    --color6: #8ce4c4;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+body{
+    background-color: var(--color3);
+    color: var(--color4);
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.wrap-game{
+    background-color: var(--color2);
+    border: solid 3px #30302f;
+    border-radius: 10px;
+}
+
+.wrap-game .board-game{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+.wrap-game .board-game .cell{
+    width: 44px;
+    height: 58px;
+    padding: 0;
+    position: relative;
+}
+.wrap-game .board-game .cell img{
+    border: solid 2px #30302f;
+    object-fit: contain;
+    width: 40px;
+    height: 50px;
+}
+.wrap-game .board-game .cell .highlight{
+    opacity: 0.3;
+}
+.wrap-game .board-game .cell .wrong-pair{
+    animation: shake 0.25s;
+}
+.wrap-game .board-game .cell .daijobu{
+    animation: shake 0.5s;
+}
+canvas#paint{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.container .right{
+    background-color: var(--color2);
+    height: 638px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid 3px #30302f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.container .right #clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 40px;
+    margin-bottom: 30px;
+    border: solid 2px #30302f;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: var(--color1);
+}
+
+.container .right .help-me{
+    padding: 7px;
+    border: solid 2px #30302f;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 19px;
+    font-family: "Times New Roman";
+    color: var(--color4);
+    background-color: var(--color1);
+    margin-bottom: 30px;
+}
+.container .right .levels{
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 3px #30302f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.container .right .btn-lv{
+    padding: 7px;
+    border: solid 2px #30302f;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 19px;
+    font-family: "Times New Roman";
+    color: var(--color4);
+    background-color: var(--color1);
+    margin-bottom: 20px;
+}
+.container .right .btn-lv:last-child{
+    margin-bottom: 0;
+}
